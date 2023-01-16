@@ -31,10 +31,15 @@ function getWinner(computer, player) {
     }
 }
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let computerChoice = getComputerChoice();
+        let playerChoice = prompt("Make a choice - Rock, Paper, or Scissors: ");
 
-let computerChoice = getComputerChoice();
-let playerChoice = prompt("Make a choice - Rock, Paper, or Scissors: ");
+        let winner = getWinner(computerChoice, playerChoice.toLowerCase());
 
-let winner = getWinner(computerChoice, playerChoice.toLowerCase());
+        console.log(winner);
+    }
+}
 
-console.log(winner);
+game()
