@@ -1,8 +1,9 @@
 const options = ["rock", "paper", "scissors"];
+let score = 0;
 
 function getComputerChoice() {
     let choice = options[Math.floor(Math.random()*3)];
-    console.log(choice);
+    // console.log(choice);
     return choice;
 }
 
@@ -11,6 +12,7 @@ function getWinner(computer, player) {
         return ("It's a tie!");
     } else if (computer === "rock") {
         if (player === "paper") {
+            win();
             return ("You win! Paper beats rock!");
         }
         else {
@@ -18,12 +20,14 @@ function getWinner(computer, player) {
         }
     } else if (computer === "paper") {
         if (player === "scissors") {
+            win();
             return ("You win! Scissors beats paper!");
         } else {
             return ("You lose! Paper beats rock!");
         }
     } else if (computer === "scissors") {
         if (player === "rock") {
+            win();
             return ("You win! Rock beats scissors!");
         } else {
             return ("You lose! Paper beats rock!")
@@ -39,7 +43,12 @@ function game() {
         let winner = getWinner(computerChoice, playerChoice.toLowerCase());
 
         console.log(winner);
+        console.log(`Your score is ${score}`);
     }
+}
+
+function win() {
+    score++;
 }
 
 game()
