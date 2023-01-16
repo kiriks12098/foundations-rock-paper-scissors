@@ -8,26 +8,25 @@ function getComputerChoice() {
 
 function getWinner(computer, player) {
     if (computer === player) {
-        console.log("It's a tie!");
-        return;
+        return ("It's a tie!");
     } else if (computer === "rock") {
         if (player === "paper") {
-            console.log("You win!");
+            return ("You win! Paper beats rock!");
         }
         else {
-            console.log("You lose!");
+            return ("You lose! Rock beats scissors!");
         }
     } else if (computer === "paper") {
         if (player === "scissors") {
-            console.log("You win!");
+            return ("You win! Scissors beats paper!");
         } else {
-            console.log("You lose!");
+            return ("You lose! Paper beats rock!");
         }
     } else if (computer === "scissors") {
         if (player === "rock") {
-            console.log("You win!");
+            return ("You win! Rock beats scissors!");
         } else {
-            console.log("You lose!")
+            return ("You lose! Paper beats rock!")
         }
     }
 }
@@ -36,4 +35,6 @@ function getWinner(computer, player) {
 let computerChoice = getComputerChoice();
 let playerChoice = prompt("Make a choice - Rock, Paper, or Scissors: ");
 
-getWinner(computerChoice, playerChoice.toLowerCase());
+let winner = getWinner(computerChoice, playerChoice.toLowerCase());
+
+console.log(winner);
